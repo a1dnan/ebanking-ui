@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="card p-3">
+        <div class="d-flex justify-content-between">
+            <h3>Bank customers</h3>
+            <div class="form-check form-switch">
+                <input [(ngModel)]="showOnlyInactiveUsers" (change)="filterUsers()" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Show inactive users only</label>
+            </div>
+        </div>
+    </div>
+    <div class="card mt-2 p-1">
+        <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">IBAN</th>
+                <th scope="col">State</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of customers">
+                <th>{{ c.firstName }}</th>
+                <td>{{ c.lastName }}</td>
+                <td>{{ c.iban }}</td>
+                <td>
+                    <span class="badge rounded-pill"
+                        [class.bg-success]="c.active"
+                        [class.bg-warning]="!c.active">{{ c.active ? 'ACTIVE': 'INACTIVE' }}</span>
+                </td>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" 
+                                    type="checkbox"
+                                    [checked]="c.active"
+                                    (change)="changeUserState(c.active, c.id)">
+                        </div>
+                        <!--<button class="btn btn-outline-danger ms-2"><i class="fa-solid fa-trash-can"></i></button>-->
+                    </div>
+                </td>
+              </tr>
+             
+            </tbody>
+          </table>
+    </div>
+</div>
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmation</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete this Contact?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-link" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancel</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-trash-can"></i> Delete</button>
+        </div>
+      </div>
+    </div>
+  </div> -->

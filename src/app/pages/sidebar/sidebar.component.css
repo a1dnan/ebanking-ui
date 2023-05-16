@@ -1,0 +1,67 @@
+  .navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  #sidebar {
+    min-width: 90px;
+    max-width: 90px;
+    min-height: 100vh;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    background: #7380b5;
+    color: #fff;
+    z-index: 1;
+    
+  }
+
+  #sidebar ul.components li {
+    font-size: 14px;
+  }
+
+  #sidebar ul.components li a {
+    padding: 10px 0;
+  }
+
+  #sidebar ul.components li a span {
+    margin-right: 0;
+    display: block;
+    font-size: 24px;
+  }
+
+  #sidebar ul li {
+    font-size: 17px;
+    margin-bottom: 25px;
+  }
+  #sidebar ul li:first-child{
+    padding-top: 40px;
+  }
+
+
+
+  #sidebar ul li a {
+    padding: 10px 30px;
+    display: block;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+  }
+
+  #sidebar ul li a:hover {
+    color: #232121;
+    transition: 0.4s;
+  }
+  #navbar ul li {
+    margin-left: 15px;
+  }
+  #navbar ul li a:hover{
+    color: rgb(7, 5, 69);
+    text-decoration: underline;
+  }
+
+

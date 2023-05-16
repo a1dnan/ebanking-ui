@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="d-flex flex-row justify-content-around">
+        <app-stats-info *ngFor="let i of accountInfo"
+            [statsInputs]="i">
+        </app-stats-info>
+    </div>
+
+    <div class="card mt-2 p-3">
+        <div class="d-flex flex-row align-items-start"> 
+            <div class="me-3">
+                <label class="form-label">Start Date :</label>
+                <input type="date" [(ngModel)]="startDate" class="form-control">
+            </div>
+            <div>
+                <label class="form-label">End Date :</label>
+                <input type="date" [(ngModel)]="endDate" class="form-control">
+            </div>
+            <div class="ms-auto p-3">
+                <button (click)="filterStatistics()" class="btn btn-primary p-2">
+                    <em class="fas fa-search"></em>&nbsp;Search
+                </button>
+            </div>
+        </div>
+        
+    </div>
+    <div class="card mt-2 p-4 mb-4">
+        <div>
+            <canvas baseChart
+                [type]="'line'"
+                [data]="lineChartData"
+                [options]="lineChartOptions">
+            </canvas>
+        </div>
+    </div>
+</div>

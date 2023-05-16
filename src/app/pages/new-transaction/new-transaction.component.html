@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="card p-3">
+        <h3>New transaction</h3>
+    </div>
+    <div class="card mt-2 p-3">
+        <h4>Your account balance : {{ accountBalance }}$</h4>
+            
+            <div class="form-group mb-3 mt-3">
+                <label for="name" class="form-label">Transaction type</label>
+                <select [(ngModel)]="transactions.type" class="form-select">
+                 <option selected disabled>Select type of transaction</option>
+                 <option [ngValue]="'DEPOSIT'">DEPOSIT</option>
+                 <option [ngValue]="'TRANSFERT'">TRANSFERT</option>
+               </select>
+            </div>
+            <div class="form-group mb-3" *ngIf="transactions.type === 'TRANSFERT'">
+                <label for="name" class="form-label">Contact</label>
+                <select [(ngModel)]="transactions.destinationIban" class="form-select">
+                 <option selected disabled>Select contact</option>
+                 <option *ngFor="let c of contacts" [ngValue]="c.iban">{{ c.firstName + ' ' + c.lastName }}</option>
+               </select>
+            </div>
+            <div class="form-group mb-3" *ngIf="transactions.type">
+                <label for="name" class="form-label">Amount</label>
+                <input [(ngModel)]="transactions.amount" type="number" class="form-control" name="amount">
+            </div>
+            <div class="form-group mb-3" *ngIf="transactions.type === 'TRANSFERT'">
+                <label for="name" class="form-label">IBAN</label>
+                <input [(ngModel)]="transactions.destinationIban" type="text" class="form-control" name="iban">
+            </div>
+            <div class="d-flex justify-content-end">
+                <button routerLink="/user/transactions" type="button" class="btn btn-link me-2">
+                    <i class="fas fa-times"></i>  Cancel
+                </button>
+                <button (click)="save()" type="button" class="btn btn-danger">
+                    <i class="fas fa-save"></i>  Save
+                </button>
+            </div>
+    </div>
+</div>

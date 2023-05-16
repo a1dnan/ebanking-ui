@@ -1,0 +1,57 @@
+.login-clean {
+	background:#f1f7fc;
+	padding:40px 0;
+    height: 100vh;
+  }
+  
+  .login-clean form {
+	max-width:400px;
+	width:95%;
+	margin:0 auto;
+	background-color:#ffffff;
+	padding:50px;
+	border-radius:14px;
+	color:#707981;
+	box-shadow:1px 1px 5px rgba(0,0,0,0.1);
+  }
+
+  .login-clean form h3{
+	color: black;
+	text-align: center;
+	margin-bottom: 25px;
+	text-transform: capitalize;
+  }
+  
+  .login-clean form .form-control {
+	background:#f7f9fc;
+	border:none;
+    margin-bottom: 20px;
+	border-bottom:1px solid #dfe7f1;
+	height:50px;
+  }
+  
+  .login-clean form .btn-primary {
+	background:#454243;
+	border-radius:6px;
+	padding:11px;
+	margin-top:10px;
+    border:none;
+  }
+  
+  .login-clean form .btn-primary:hover, .login-clean form .btn-primary:active {
+	background:#232323;
+  }
+  .almessage{
+    position: relative;
+	min-width: 400px;
+    height: auto;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+	font-size: 14px;
+	padding: 10px;
+	margin-bottom: 5px;
+	background-color: #ffffff;
+	box-shadow:1px 1px 5px rgba(0,0,0,0.1);
+	border-radius:14px;
+}

@@ -1,0 +1,24 @@
+<div class="login-clean">
+    <div *ngIf="errorMessages.length" class="almessage" style="width: 18rem;">
+        <div class="text-danger" role="alert">
+            <p *ngFor="let err of errorMessages">{{err}}</p>
+        </div>
+    </div>
+    <form method="post" action="">
+        <h3>LOGIN</h3>
+        <div class="form-group">
+            <input [(ngModel)]="authRequest.email" class="form-control" type="email" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <input [(ngModel)]="authRequest.password" class="form-control" type="password" name="password" placeholder="Password">
+        </div>
+        
+        <div class="form-group d-flex justify-content-center">
+            <button (click)="login()" class="btn btn-primary btn-block" name="submit" type="submit">Sing in</button>
+        </div>
+        <hr>
+        You don't have an account? <a routerLink="/register">Register now</a>
+    </form>
+</div>
+
+  

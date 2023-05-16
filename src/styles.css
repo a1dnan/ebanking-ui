@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+  body{
+	background-color: #f1f7fc !important;
+  }
+  .card{
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+  @media (max-width: 1498px){
+		.container{
+			width: 75% !important;
+		}
+  }
